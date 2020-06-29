@@ -1,7 +1,7 @@
 class SuperherosController < ApplicationController
   def index
     @my_hero = Superhero.create
-    @superheros - Superhero.where.not(id: @my_hero.id)
+    @superheros = Superhero.where.not(id: @my_hero.id)
   end
 
   def update
