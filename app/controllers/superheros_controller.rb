@@ -15,6 +15,14 @@ class SuperherosController < ApplicationController
   def update
     superhero = Superhero.find(params[:id])
     superhero.update(superhero_params)
+
+    ActionCable.server.broadcast(
+        "superheros",
+        id: superhero.id,
+        name: superhero.name,
+        power: superhero.power,
+        weakness: superhero.weakness,
+    )
   end
 
   private
