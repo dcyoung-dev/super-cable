@@ -1,3 +1,49 @@
 // Place all the styles related to the Superheros controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+html {
+  //font-family: 'Roboto', sans-serif;
+  //font-weight: lighter;
+  font-family: 'Bangers', cursive;
+  background: #070C52;
+color: #B42520;
+}
+
+h1 {
+  font-family: 'Bangers', cursive;
+  font-size: 5em;
+
+  color: #DBDC17;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 14em);
+  grid-auto-rows: 14em;
+  grid-gap: 2em;
+}
+
+li {
+  padding: 1em 0.75em;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.11),
+  0 2px 2px rgba(0,0,0,0.11),
+  0 4px 4px rgba(0,0,0,0.11),
+  0 6px 8px rgba(0,0,0,0.11),
+  0 8px 16px rgba(0,0,0,0.11);
+  border-radius: 0.25em;
+  background: #DBDC17;
+  border: 0.75em solid #B42520;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  > div {
+    font-size: 3em;
+  }
+}
