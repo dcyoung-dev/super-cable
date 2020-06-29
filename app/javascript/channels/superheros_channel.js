@@ -17,9 +17,20 @@ consumer.subscriptions.create("SuperherosChannel", {
     const listItem = document.getElementById(`superhero_${id}`)
 
     if (listItem) {
+      // if list item contains a form - skip it
+      if (listItem.querySelector("form")) {
+        return
+      }
+
+      // We have to update the list item with the new data
+      listItem.innerHTML = `
+            <div>${data.name || ""}</div>
+            <div>${data.power || ""}</div>
+            <div>${data.weakness || ""}</div>
+      `
 
     } else {
-    //  Create a new list item using the data
+      //  Create a new list item using the data
       const newElement = document.createElement("li");
       newElement.innerHTML = `
         <li id="superhero_${data.id}">
@@ -28,7 +39,7 @@ consumer.subscriptions.create("SuperherosChannel", {
             <div>${data.weakness || ""}</div>
         </li>
       `
-    //  Attach new element to the list
+      //  Attach new element to the list
       const list = document.getElementById("superheros")
       list.appendChild(newElement)
     }
