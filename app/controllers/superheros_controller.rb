@@ -25,6 +25,11 @@ class SuperherosController < ApplicationController
     )
   end
 
+  def clear
+    Superhero.all.delete_all
+    redirect_to superheros_path
+  end
+
   private
 
   def superhero_params
