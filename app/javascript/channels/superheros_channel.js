@@ -32,7 +32,7 @@ consumer.subscriptions.create("SuperherosChannel", {
     } else {
       //  Create a new list item using the data
       const newElement = document.createElement("li");
-      newElement.id = "superhero_${data.id}"
+      newElement.id = `superhero_${data.id}`
       newElement.innerHTML = `
           <div>${data.name || ""}</div>
           <div>${data.power || ""}</div>
